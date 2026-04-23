@@ -1,6 +1,6 @@
 import type { Order } from '../types/order'
 
-export const recentOrders: Order[] = [
+export const orders: Order[] = [
   {
     id: '#ORD-1024',
     customerName: 'Sophia Turner',
@@ -36,4 +36,20 @@ export const recentOrders: Order[] = [
     total: '$156.75',
     status: 'Pending',
   },
+  {
+    id: '#ORD-1029',
+    customerName: 'Noah Bennett',
+    date: '2026-04-20',
+    total: '$420.10',
+    status: 'Completed',
+  },
+  {
+    id: '#ORD-1030',
+    customerName: 'Olivia Reed',
+    date: '2026-04-21',
+    total: '$78.40',
+    status: 'Cancelled',
+  },
 ]
+
+export const recentOrders = orders.slice(0, 5)
