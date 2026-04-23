@@ -382,3 +382,18 @@ textarea {
   background: #fef3c7;
   color: #92400e;
 }
+.select-filter {
+  min-width: 220px;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.select-filter:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
