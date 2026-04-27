@@ -1,73 +1,113 @@
-# React + TypeScript + Vite
+# Business Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A portfolio-quality React frontend project for monitoring key business metrics, recent orders, and user activity through a clean internal dashboard interface.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Overview
 
-## Expanding the ESLint configuration
+This project is a frontend-first Business Analytics Dashboard designed for small-to-medium digital businesses. It helps an admin quickly review operational health through KPI cards, revenue visualization, recent orders, and user records.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+* Dashboard overview with KPI cards
+* Revenue chart with mock analytics data
+* Recent orders table
+* Users page with live search
+* Orders page with status filtering
+* Empty-state handling
+* Responsive layout
+* Typed React + TypeScript architecture
+* Basic interaction testing with Vitest and React Testing Library
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* React
+* TypeScript
+* Vite
+* React Router
+* Recharts
+* Vitest
+* React Testing Library
+
+## Screenshots
+
+### Dashboard
+
+![Dashboard](./public/screenshots/dashboard%20-%20overview.jpeg)
+
+### Users
+
+![Users](./public/screenshots/users%20-%20page.jpeg)
+
+### Orders
+
+![Orders](./public/screenshots/orders%20-%20page.jpeg)
+
+## Project Structure
+
+```text
+src/
+├─ app/
+├─ components/
+│  ├─ dashboard/
+│  ├─ layout/
+│  └─ ui/
+├─ data/
+├─ pages/
+├─ styles/
+├─ test/
+└─ types/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Install dependencies:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Run tests:
+
+```bash
+npm run test
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## What this project demonstrates
+
+This project demonstrates:
+
+* application-style React layout design
+* reusable component architecture
+* typed mock-data rendering
+* frontend interaction handling through search and filtering
+* clean routing structure
+* portfolio-ready project organization
+
+## Notes
+
+* This project is frontend-only
+* All business data is mocked
+* No backend or authentication is included in the MVP
+
+## Author
+
+**Omid Salamizadeh**
+Frontend Developer
+
+* LinkedIn: https://www.linkedin.com/in/omid-salamizadeh/
