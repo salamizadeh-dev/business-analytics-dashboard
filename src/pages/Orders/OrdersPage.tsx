@@ -9,7 +9,7 @@ import type { OrderStatus } from '../../types/order'
 type OrderFilterValue = 'All' | OrderStatus
 
 const filterOptions = [
-  { label: 'All statuses', value: 'All' },
+  { label: 'All', value: 'All' },
   { label: 'Completed', value: 'Completed' },
   { label: 'Pending', value: 'Pending' },
   { label: 'Cancelled', value: 'Cancelled' },
