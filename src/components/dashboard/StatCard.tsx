@@ -9,16 +9,19 @@ export function StatCard({ stat }: StatCardProps) {
   return (
     <Card>
       <div className="stat-card">
-        <div>
+        <div className="stat-card__top">
           <p className="stat-card__label">{stat.label}</p>
-          <h3 className="stat-card__value">{stat.value}</h3>
+
+          <span
+            className={`stat-card__trend stat-card__trend--${stat.trendType}`}
+          >
+            {stat.trend}
+          </span>
         </div>
 
-        <span
-          className={`stat-card__trend stat-card__trend--${stat.trendType}`}
-        >
-          {stat.trend}
-        </span>
+        <div className="stat-card__body">
+          <h3 className="stat-card__value">{stat.value}</h3>
+        </div>
       </div>
     </Card>
   )
