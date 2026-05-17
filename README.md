@@ -1,9 +1,13 @@
 # Business Analytics Dashboard
 
-A portfolio-quality React frontend project for monitoring key business metrics, recent orders, and user activity through a clean internal dashboard interface.
+A portfolio-quality React frontend project for monitoring key business metrics, recent orders, and user activity through a clean internal dashboard in
 
-## Live Demo
 You can visit the website by clicking the link below 👇👇:
+=======
+
+You can visit the website by clicking the link below 👇👇:
+
+
 ** https://biz-analytix.vercel.app/
 
 ## Overview
