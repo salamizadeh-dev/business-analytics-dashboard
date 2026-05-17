@@ -9,9 +9,15 @@ export function OrdersTable({ orders }: OrdersTableProps) {
   return (
     <Card>
       <div className="dashboard-section">
-        <div className="dashboard-section__header">
-          <h3>Orders</h3>
-          <p>Track order status and recent transaction details</p>
+        <div className="dashboard-section__header dashboard-section__header--split">
+          <div>
+            <h3>Order Activity</h3>
+            <p>Review status, customer activity, and transaction value</p>
+          </div>
+
+          <span className="dashboard-section__meta">
+            {orders.length} {orders.length === 1 ? 'record' : 'records'}
+          </span>
         </div>
 
         <div className="table-wrapper">
@@ -29,10 +35,18 @@ export function OrdersTable({ orders }: OrdersTableProps) {
             <tbody>
               {orders.map((order) => (
                 <tr key={order.id}>
-                  <td>{order.id}</td>
+                  <td>
+                    <div className="table-primary-cell">
+                      <span className="table-primary-cell__title">{order.id}</span>
+                    </div>
+                  </td>
+
                   <td>{order.customerName}</td>
+
                   <td>{order.date}</td>
-                  <td>{order.total}</td>
+
+                  <td className="table-value-cell">{order.total}</td>
+
                   <td>
                     <span
                       className={`status-badge status-badge--${order.status.toLowerCase()}`}
