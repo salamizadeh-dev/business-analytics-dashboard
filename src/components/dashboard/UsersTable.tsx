@@ -9,9 +9,15 @@ export function UsersTable({ users }: UsersTableProps) {
   return (
     <Card>
       <div className="dashboard-section">
-        <div className="dashboard-section__header">
-          <h3>Users</h3>
-          <p>Browse user records and account status</p>
+        <div className="dashboard-section__header dashboard-section__header--split">
+          <div>
+            <h3>User Directory</h3>
+            <p>Monitor account roles, activity status, and onboarding timeline</p>
+          </div>
+
+          <span className="dashboard-section__meta">
+            {users.length} {users.length === 1 ? 'record' : 'records'}
+          </span>
         </div>
 
         <div className="table-wrapper">
@@ -29,9 +35,18 @@ export function UsersTable({ users }: UsersTableProps) {
             <tbody>
               {users.map((user) => (
                 <tr key={user.id}>
-                  <td>{user.name}</td>
+                  <td>
+                    <div className="table-primary-cell">
+                      <span className="table-primary-cell__title">{user.name}</span>
+                    </div>
+                  </td>
+
                   <td>{user.email}</td>
-                  <td>{user.role}</td>
+
+                  <td>
+                    <span className="role-badge">{user.role}</span>
+                  </td>
+
                   <td>
                     <span
                       className={`status-badge status-badge--${user.status.toLowerCase()}`}
@@ -39,6 +54,7 @@ export function UsersTable({ users }: UsersTableProps) {
                       {user.status}
                     </span>
                   </td>
+
                   <td>{user.joinedAt}</td>
                 </tr>
               ))}

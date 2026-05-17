@@ -12,13 +12,15 @@ export function SearchInput({
   placeholder = 'Search...',
 }: SearchInputProps) {
   return (
-    <input
-      className="search-input"
-      type="text"
-      value={value}
-      onChange={onChange}
-      placeholder={placeholder}
-      aria-label="Search"
-    />
+    <div className="search-input-wrapper">
+      <input
+        className="search-input"
+        type="text"
+        value={value}
+        onChange={onChange}
+        placeholder={placeholder}
+        aria-label="Search"
+      />
+    </div>
   )
 }
