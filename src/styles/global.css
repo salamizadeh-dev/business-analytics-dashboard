@@ -348,7 +348,7 @@ textarea {
 }
 
 .search-input-wrapper {
-  width: min(420px, 100%);
+  width: min(260px, 100%);
 }
 
 
@@ -388,6 +388,11 @@ textarea {
 }
 
 .table-primary-cell__title {
+  font-weight: 600;
+  color: #111827;
+}
+
+.table-value-cell {
   font-weight: 600;
   color: #111827;
 }
@@ -454,19 +459,25 @@ textarea {
   color: #92400e;
 }
 .select-filter {
-  min-width: 220px;
-  padding: 0.85rem 1rem;
+  width: 100%;
+  min-width: 0;
+  padding: 0.9rem 1rem;
   border: 1px solid #d1d5db;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #ffffff;
   color: #111827;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
 .select-filter:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.select-filter:hover {
+  border-color: #9ca3af;
 }
 
 .card {

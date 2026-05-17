@@ -20,18 +20,19 @@ export function OrdersPage() {
 
   const filteredOrders = useMemo(() => {
     if (selectedStatus === 'All') return orders
-
     return orders.filter((order) => order.status === selectedStatus)
   }, [selectedStatus])
+
+  const isFiltered = selectedStatus !== 'All'
 
   return (
     <section className="page">
       <PageSectionHeader
         title="Orders"
-        description="Review and track recent order activity."
+        description="Track transaction activity, review status distribution, and monitor recent order flow."
       />
 
-      <div className="page-toolbar">
+      <div className="page-toolbar page-toolbar--between">
         <SelectFilter
           value={selectedStatus}
           options={filterOptions}
@@ -39,14 +40,24 @@ export function OrdersPage() {
             setSelectedStatus(event.target.value as OrderFilterValue)
           }
         />
+
+        {isFiltered ? (
+          <button
+            type="button"
+            className="toolbar-clear-button"
+            onClick={() => setSelectedStatus('All')}
+          >
+            Reset filter
+          </button>
+        ) : null}
       </div>
 
       {filteredOrders.length > 0 ? (
         <OrdersTable orders={filteredOrders} />
       ) : (
         <EmptyState
-          title="No orders found"
-          description="Try selecting a different order status."
+          title="No orders match this status"
+          description="Try another filter option to view available order records."
         />
       )}
     </section>

@@ -17,17 +17,19 @@ export function SelectFilter({
   onChange,
 }: SelectFilterProps) {
   return (
-    <select
-      className="select-filter"
-      value={value}
-      onChange={onChange}
-      aria-label="Filter"
-    >
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
+    <div className="select-filter-wrapper">
+      <select
+        className="select-filter"
+        value={value}
+        onChange={onChange}
+        aria-label="Filter"
+      >
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+    </div>
   )
 }
