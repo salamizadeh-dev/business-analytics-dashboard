@@ -20,6 +20,20 @@ export function DashboardPage() {
         ))}
       </div>
 
+      <section className="insight-banner">
+        <div>
+          <p className="insight-banner__eyebrow">Weekly insight</p>
+          <h3 className="insight-banner__title">
+            Revenue is up 12.4% compared to last week
+          </h3>
+        </div>
+
+        <p className="insight-banner__text">
+          Growth is being driven by stronger order volume and a steady conversion
+          rate across the last 7 days.
+        </p>
+      </section>
+
       <SalesChart data={salesData} />
 
       <RecentOrdersTable orders={recentOrders} />

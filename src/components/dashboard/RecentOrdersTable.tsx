@@ -9,9 +9,15 @@ export function RecentOrdersTable({ orders }: RecentOrdersTableProps) {
   return (
     <Card>
       <div className="dashboard-section">
-        <div className="dashboard-section__header">
-          <h3>Recent Orders</h3>
-          <p>Latest transaction activity</p>
+        <div className="dashboard-section__header dashboard-section__header--split">
+          <div>
+            <h3>Recent Orders</h3>
+            <p>Latest transaction activity across the platform</p>
+          </div>
+
+          <button type="button" className="dashboard-section__link">
+            View all
+          </button>
         </div>
 
         <div className="table-wrapper">
