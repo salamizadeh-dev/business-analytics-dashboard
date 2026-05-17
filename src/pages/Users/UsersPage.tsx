@@ -21,27 +21,39 @@ export function UsersPage() {
     })
   }, [query])
 
+  const hasQuery = query.trim().length > 0
+
   return (
     <section className="page">
       <PageSectionHeader
         title="Users"
-        description="Browse and monitor user records."
+        description="Browse customer and team records, monitor account status, and quickly find people by name or email."
       />
 
-      <div className="page-toolbar">
+      <div className="page-toolbar page-toolbar--between">
         <SearchInput
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Search users by name or email"
         />
+
+        {hasQuery ? (
+          <button
+            type="button"
+            className="toolbar-clear-button"
+            onClick={() => setQuery('')}
+          >
+            Clear search
+          </button>
+        ) : null}
       </div>
 
       {filteredUsers.length > 0 ? (
         <UsersTable users={filteredUsers} />
       ) : (
         <EmptyState
-          title="No users found"
-          description="Try a different name or email search."
+          title="No users match this search"
+          description="Try a different name or email to find the record you need."
         />
       )}
     </section>

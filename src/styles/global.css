@@ -283,8 +283,9 @@ textarea {
 .data-table th,
 .data-table td {
   text-align: left;
-  padding: 0.9rem 1rem;
+  padding: 1rem 1rem;
   border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
 }
 
 .data-table th {
@@ -333,26 +334,74 @@ textarea {
     grid-template-columns: 1fr;
   }
 }
+
 .page-toolbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
+.page-toolbar--between {
+  justify-content: space-between;
+}
+
+.search-input-wrapper {
+  width: min(420px, 100%);
+}
+
+
 .search-input {
-  width: min(380px, 100%);
-  padding: 0.85rem 1rem;
+  width: 100%;
+  padding: 0.9rem 1rem;
   border: 1px solid #d1d5db;
-  border-radius: 12px;
+  border-radius: 14px;
   background: #ffffff;
   color: #111827;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.search-input:hover {
+  border-color: #9ca3af;
 }
 
 .search-input:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.toolbar-clear-button {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.table-primary-cell {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.table-primary-cell__title {
+  font-weight: 600;
+  color: #111827;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  background: #eff6ff;
+  color: #1d4ed8;
 }
 
 .empty-state {
@@ -361,16 +410,33 @@ textarea {
   border-radius: 18px;
   padding: 2rem;
   text-align: center;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.empty-state__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 1.2rem;
+  line-height: 1;
 }
 
 .empty-state h3 {
-  margin: 0 0 0.5rem;
+  margin: 0;
   font-size: 1.1rem;
 }
 
 .empty-state p {
   margin: 0;
   color: #6b7280;
+  max-width: 460px;
+  line-height: 1.6;
 }
 
 .status-badge--active {
@@ -401,10 +467,6 @@ textarea {
 .select-filter:focus {
   border-color: #2563eb;
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
-}
-.page-toolbar {
-  flex-wrap: wrap;
-  gap: 0.75rem;
 }
 
 .card {
@@ -682,3 +744,4 @@ textarea {
     font-size: 1.7rem;
   }
 }
+
